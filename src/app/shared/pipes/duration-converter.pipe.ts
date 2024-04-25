@@ -17,7 +17,7 @@ export class DurationConverterPipe implements PipeTransform {
       else{
         const min= +value % minuteValue;
         const hours= +value/minuteValue;
-        return `${hours.toFixed(0)}h ${min}min`;
+        return `${Math.trunc(hours)}h ${min}min`;
       }
     }
     return "";
