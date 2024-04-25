@@ -14,6 +14,6 @@ export class MoviesService {
   }
 
   getMovieDetails():Observable<MovieDetails>{
-    return this.http.get<MovieDetails>(window.location.href)
+    return this.http.get<MovieDetails>(window.location.href);
   }
 }

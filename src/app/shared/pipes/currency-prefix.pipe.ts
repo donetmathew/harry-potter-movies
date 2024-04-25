@@ -8,7 +8,7 @@ export class CurrencyPrefixPipe implements PipeTransform {
 
   transform(value: string, currency:string): string {
     if(value && currency){
-      return `${currency} ${value}`
+      return `${currency}${value} million`
     }
     return value;
   }
