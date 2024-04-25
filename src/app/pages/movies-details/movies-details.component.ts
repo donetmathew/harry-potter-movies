@@ -5,13 +5,14 @@ import { MovieDetails } from '../../model/movies.model';
 import { RouterModule } from '@angular/router';
 import { DurationConverterPipe } from "../../shared/pipes/duration-converter.pipe";
 import { CommonModule } from '@angular/common';
+import { CurrencyPrefixPipe } from '../../shared/pipes/currency-prefix.pipe';
 
 @Component({
     selector: 'app-movies-details',
     standalone: true,
     templateUrl: './movies-details.component.html',
     styleUrl: './movies-details.component.css',
-    imports: [RouterModule, DurationConverterPipe, CommonModule]
+    imports: [RouterModule, DurationConverterPipe, CommonModule,CurrencyPrefixPipe]
 })
 export class MoviesDetailsComponent {
   constructor(private service: MoviesService){}

@@ -6,6 +6,7 @@ import { DurationConverterPipe } from "../../shared/pipes/duration-converter.pip
 import { FormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Movie } from '../../model/movies.model';
+import { CurrencyPrefixPipe } from "../../shared/pipes/currency-prefix.pipe";
 
 @Component({
     selector: 'movies-list',
@@ -13,7 +14,7 @@ import { Movie } from '../../model/movies.model';
     templateUrl: './movies-list.component.html',
     styleUrl: './movies-list.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [ListComponent, CommonModule, DurationConverterPipe,FormsModule]
+    imports: [ListComponent, CommonModule, DurationConverterPipe, FormsModule, CurrencyPrefixPipe]
 })
 export class MoviesListComponent{
  constructor(private service:MoviesService, private cd:ChangeDetectorRef){}

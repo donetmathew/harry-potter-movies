@@ -3,11 +3,11 @@
         <span class="icon-home"></span>
         Back
     </button>
-    <h2 class="title">{{movieDetails.title}}</h2>
+    <h2 class="title">{{movieDetails?.title}}</h2>
     <div class="imageDescription">
-        <img src="{{movieDetails.poster}}" alt="Movie image">
+        <img src="{{movieDetails?.poster}}" alt="Movie image">
         <p>
-           <b>Summary: </b> {{movieDetails.summary}}
+           <b>Summary: </b> {{movieDetails?.summary}}
         </p>
     </div>
     <h5 class="detailsTitle">Details</h5>
@@ -20,11 +20,11 @@
             <li>Cinematographers</li>
         </ul>
         <ul class="detailsValue">
-            <li><span>{{movieDetails.box_office | currency}}</span></li>
-            <li><span>{{movieDetails.budget | currency}}</span></li>
-            <li><span>{{movieDetails.duration | durationConverter}}</span></li>
-            <li><span>{{movieDetails.producers}}</span></li>
-            <li><span>{{movieDetails.cinematographers}}</span></li>
+            <li><span>{{movieDetails?.box_office || '' | currencyPrefix:"$"}}</span></li>
+            <li><span>{{movieDetails?.budget || '' | currencyPrefix: "$"}}</span></li>
+            <li><span>{{movieDetails?.duration || '' | durationConverter}}</span></li>
+            <li><span>{{movieDetails?.producers || ''}}</span></li>
+            <li><span>{{movieDetails?.cinematographers || ''}}</span></li>
         </ul>
     </div>
 

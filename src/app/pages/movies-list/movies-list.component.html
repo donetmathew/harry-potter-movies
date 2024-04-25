@@ -33,7 +33,7 @@
             [releaseDate]="movie?.release_date || ''"
             [duration]="movie?.duration || '' | durationConverter"
             [title]="movie?.title || ''"
-            [budget]="movie?.budget || ''"
+            [budget]="movie?.budget || ''| currencyPrefix:'$'"
             [id]="movie?.id || ''"
           >
           </ui-movie-list>
