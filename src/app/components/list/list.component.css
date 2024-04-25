@@ -1,0 +1,10 @@
+.flex{
+    display:flex;
+}
+h4{
+    margin:0
+}
+.movie-list{
+    display: flex;
+    justify-content: space-between;
+}

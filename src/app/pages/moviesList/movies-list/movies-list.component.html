@@ -1,0 +1,41 @@
+<div class="movies-list">
+  <div class="filter">
+    <form>
+      <legend>Filters:</legend>
+      <div class="row">
+        <div class="input-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" [(ngModel)]="title" placeholder="title" (keyup)="filter($event)" [ngModelOptions]="{standalone: true}" />
+        </div>
+        <div class="input-group">
+          <label for="releaseYear">Release Year</label>
+          <input type="number" id="releaseYear" placeholder="Release Year"  [(ngModel)]="releaseYear" [ngModelOptions]="{standalone: true}"/>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="movies" *ngIf="(title || releaseYear);else allMovies">
+    <ul *ngFor="let movie of filteredMovies">
+      <ui-movie-list
+        [releaseDate]="movie?.release_date"
+        [duration]="movie?.duration | durationConverter"
+        [title]="movie?.title"
+        [budget]="movie?.budget"
+      >
+      </ui-movie-list>
+    </ul>
+  </div>
+  <ng-template #allMovies>
+    <div class="movies" >
+        <ul *ngFor="let movie of movies">
+          <ui-movie-list
+            [releaseDate]="movie?.release_date"
+            [duration]="movie?.duration | durationConverter"
+            [title]="movie?.title"
+            [budget]="movie?.budget"
+          >
+          </ui-movie-list>
+        </ul>
+      </div>
+  </ng-template>
+</div>
