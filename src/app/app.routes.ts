@@ -1,7 +1,15 @@
 import { Routes } from '@angular/router';
-import { MoviesListComponent } from './pages/moviesList/movies-list/movies-list.component';
+import { MoviesListComponent } from './pages/movies-list/movies-list.component';
 
 export const routes: Routes = [
-    { path: '', component: MoviesListComponent }, // Home route
-  // Add more routes for other components
+    { path: '', redirectTo:"movies",pathMatch: 'full' }, // Home route
+    {
+      path:'movies', component: MoviesListComponent
+    },
+    {
+        path: 'movies/:id',
+        loadComponent: () =>
+          import('./pages/movies-details/movies-details.component').then((x) => x.MoviesDetailsComponent),
+    },
+
 ];
